@@ -3,6 +3,7 @@ from autogen import ConversableAgent
 from autogen import register_function
 import chess
 import chess.svg
+from IPython.display import display
 # from flask  import Flask, render_template
 # from groq import Groq
 import os
@@ -68,6 +69,10 @@ def make_move(
             piece_name = "Queen"
         elif piece_type == chess.KING:
             piece_name = "King"
+    # embed_kernel()
+    display(
+        chess.svg.board(board, arrows=[(move.from_square, move.to_square)], fill={move.from_square:"gray"}, size=400)
+    )
     return f"Moved {piece_name} ({piece_symbol}) from "\
     f"{chess.SQUARE_NAMES[move.from_square]} to "\
     f"{chess.SQUARE_NAMES[move.to_square]}."
