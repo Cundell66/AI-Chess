@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chess Board</title>
+  </head>
+  <body>
+    <h1>Chess Board</h1>
+    <div>
+      {% if svg_board %}
+        {{ svg_board | safe }}
+      {% endif %}
+    </div>
+    <a href="/next_move"><button>Next Move</button></a>
+  </body>
+</html>
